@@ -2,7 +2,18 @@
 *.user.*
 translations/*.qm
 build
+build-release
+build-debug
 version.js
+
+# AppImage build artefacts (see scripts/build-appimage.sh)
+AppDir/
+squashfs-root/
+runtime-x86_64
+linuxdeployqt*.AppImage
+*.AppImage
+*.tar.gz
+*.log
 # IOS stuff below
 moc_*
 *.o
