@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 // 
 // All rights reserved.
 // 
@@ -63,7 +63,7 @@ Rectangle {
                 WizardHeader {
                     Layout.bottomMargin: 7
                     Layout.fillWidth: true
-                    title: qsTr("Welcome to Monero") + translationManager.emptyString
+                    title: qsTr("Welcome to Hidering") + translationManager.emptyString
                     subtitle: ""
                 }
 
@@ -79,7 +79,7 @@ Rectangle {
                                                                         : nettype === 1 ? " (" + qsTr("testnet") + ")"
                                                                                         : "") + translationManager.emptyString
                 }
-                bodyText: qsTr("Choose this option if this is your first time using Monero.") + translationManager.emptyString
+                bodyText: qsTr("Choose this option if this is your first time using Hidering.") + translationManager.emptyString
                 imageIcon: "qrc:///images/create-wallet.png"
 
                 onMenuClicked: {
@@ -106,7 +106,7 @@ Rectangle {
                                                                         : nettype === 1 ? " (" + qsTr("testnet") + ")"
                                                                                         : "") + translationManager.emptyString
                 }
-                bodyText: qsTr("Connect your hardware wallet to create a new Monero wallet.") + translationManager.emptyString
+                bodyText: qsTr("Connect your hardware wallet to create a new Hidering wallet.") + translationManager.emptyString
                 imageIcon: "qrc:///images/restore-wallet-from-hardware.png"
 
                 onMenuClicked: {

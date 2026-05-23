@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -264,7 +264,7 @@ bool OSHelper::installed() const
 {
 #ifdef Q_OS_WIN
     static constexpr const wchar_t installKey[] =
-        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Monero GUI Wallet_is1";
+        L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\Hidering GUI Wallet_is1";
     static constexpr const wchar_t installValue[] = L"InstallLocation";
 
     DWORD size;

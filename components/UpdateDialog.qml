@@ -1,4 +1,4 @@
-// Copyright (c) 2020-2024, The Monero Project
+// Copyright (c) 2020-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -74,7 +74,7 @@ Popup {
             font.bold: true
             font.family: MoneroComponents.Style.fontRegular.name
             font.pixelSize: 18
-            text: qsTr("New Monero version v%1 is available.").arg(updateDialog.version)
+            text: qsTr("New Hidering version v%1 is available.").arg(updateDialog.version)
         }
 
         Text {
@@ -95,7 +95,7 @@ Popup {
 
             text: {
                 if (!updateDialog.url) {
-                    return qsTr("Please visit getmonero.org for details") + translationManager.emptyString;
+                    return qsTr("Please visit hidering.org for details") + translationManager.emptyString;
                 }
                 if (downloader.active) {
                     return "%1 (%2%)"

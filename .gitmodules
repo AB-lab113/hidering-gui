@@ -1,6 +1,7 @@
 [submodule "monero"]
 	path = monero
-	url = https://github.com/monero-project/monero
+	url = https://github.com/AB-lab113/hidering
+	branch = v2-privacy
 	ignore = all
 [submodule "external/quirc"]
 	path = external/quirc

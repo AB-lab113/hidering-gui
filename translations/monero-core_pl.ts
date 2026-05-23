@@ -69,8 +69,8 @@
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="93"/>
-        <source>This makes it easier to send or receive Monero and reduces errors when typing in addresses manually.</source>
-        <translation>To ułatwia wysyłanie oraz otrzymywanie Monero i redukuje błędy podczas wpisywania adresu manualnie.</translation>
+        <source>This makes it easier to send or receive Hidering and reduces errors when typing in addresses manually.</source>
+        <translation>To ułatwia wysyłanie oraz otrzymywanie Hidering i redukuje błędy podczas wpisywania adresu manualnie.</translation>
     </message>
     <message>
         <location filename="../pages/AddressBook.qml" line="102"/>
@@ -634,13 +634,13 @@ Zaleca się wprowadzenie hasła do portfela sprzętowego w celu zwiększenia bez
     </message>
     <message>
         <location filename="../pages/Keys.qml" line="62"/>
-        <source>WARNING: Do not reuse your Monero keys on another fork, UNLESS this fork has key reuse mitigations built in. Doing so will harm your privacy.</source>
-        <translation>UWAGA: Nie używaj swoich kluczy Monero na innym forku, CHYBA ŻE ów fork ma zabezpieczenia przed ponownym wykorzystaniem kluczy. Ucierpi na tym twoja prywatność.</translation>
+        <source>WARNING: Do not reuse your Hidering keys on another fork, UNLESS this fork has key reuse mitigations built in. Doing so will harm your privacy.</source>
+        <translation>UWAGA: Nie używaj swoich kluczy Hidering na innym forku, CHYBA ŻE ów fork ma zabezpieczenia przed ponownym wykorzystaniem kluczy. Ucierpi na tym twoja prywatność.</translation>
     </message>
     <message>
         <location filename="../pages/Keys.qml" line="85"/>
-        <source>WARNING: Copying your seed to clipboard can expose you to malicious software, which may record your seed and steal your Monero. Please write down your seed manually.</source>
-        <translation>OSTRZEŻENIE: Kopiowanie seeda do schowka może narazić Cię na złośliwe oprogramowanie, które może zapisać seeda i wykraść Monero. Wpisz seeda ręcznie.</translation>
+        <source>WARNING: Copying your seed to clipboard can expose you to malicious software, which may record your seed and steal your Hidering. Please write down your seed manually.</source>
+        <translation>OSTRZEŻENIE: Kopiowanie seeda do schowka może narazić Cię na złośliwe oprogramowanie, które może zapisać seeda i wykraść Hidering. Wpisz seeda ręcznie.</translation>
     </message>
     <message>
         <location filename="../pages/Keys.qml" line="106"/>
@@ -1065,12 +1065,12 @@ Zaleca się wprowadzenie hasła do portfela sprzętowego w celu zwiększenia bez
     </message>
     <message>
         <location filename="../pages/Mining.qml" line="76"/>
-        <source>Mining with your computer helps strengthen the Monero network. The more people mine, the harder it is for the network to be attacked, and every little bit helps.
+        <source>Mining with your computer helps strengthen the Hidering network. The more people mine, the harder it is for the network to be attacked, and every little bit helps.
 
-Mining also gives you a small chance to earn some Monero. Your computer will create hashes looking for block solutions. If you find a block, you will get the associated reward. Good luck!</source>
-        <translation>Kopanie za pomocą komputera pomaga wzmocnić sieć Monero. Im więcej osób kopie, tym trudniej jest zaatakować sieć, a każda cząstka pomaga.
+Mining also gives you a small chance to earn some Hidering. Your computer will create hashes looking for block solutions. If you find a block, you will get the associated reward. Good luck!</source>
+        <translation>Kopanie za pomocą komputera pomaga wzmocnić sieć Hidering. Im więcej osób kopie, tym trudniej jest zaatakować sieć, a każda cząstka pomaga.
 
-Kopanie daje Ci również niewielką szansę na zarobienie trochę Monero. Twój komputer tworzy hashe w poszukiwaniu rozwiązań bloków. Jeśli znajdziesz taki blok, otrzymasz związaną z nim nagrodę. Powodzenia!</translation>
+Kopanie daje Ci również niewielką szansę na zarobienie trochę Hidering. Twój komputer tworzy hashe w poszukiwaniu rozwiązań bloków. Jeśli znajdziesz taki blok, otrzymasz związaną z nim nagrodę. Powodzenia!</translation>
     </message>
     <message>
         <location filename="../pages/Mining.qml" line="76"/>
@@ -1720,8 +1720,8 @@ Kopanie daje Ci również niewielką szansę na zarobienie trochę Monero. Twój
     </message>
     <message>
         <location filename="../pages/settings/SettingsInfo.qml" line="102"/>
-        <source>Embedded Monero version: </source>
-        <translation>Wersja Monero: </translation>
+        <source>Embedded Hidering version: </source>
+        <translation>Wersja Hidering: </translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsInfo.qml" line="132"/>
@@ -1831,13 +1831,13 @@ Poprzednia pamięć podręczna portfela zostanie zapisana pod inną nazwą i mo�
     </message>
     <message>
         <location filename="../pages/settings/SettingsInfo.qml" line="410"/>
-        <source>Donate to Monero</source>
-        <translation>Wesprzyj Monero darowizną</translation>
+        <source>Donate to Hidering</source>
+        <translation>Wesprzyj Hidering darowizną</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsInfo.qml" line="412"/>
-        <source>Donation to Monero Core Team</source>
-        <translation>Dotacja dla głównego zespołu Monero</translation>
+        <source>Donation to Hidering Core Team</source>
+        <translation>Dotacja dla głównego zespołu Hidering</translation>
     </message>
 </context>
 <context>
@@ -2015,13 +2015,13 @@ Poprzednia pamięć podręczna portfela zostanie zapisana pod inną nazwą i mo�
     </message>
     <message>
         <location filename="../pages/settings/SettingsNode.qml" line="224"/>
-        <source>Uses a third-party server to connect to the Monero network. Less secure, but easier on your computer.</source>
-        <translation>Korzysta z zewnętrznego serwera do połączenia się z siecią Monero. Mniej bezpieczne, ale mniej obciążające dla komputera.</translation>
+        <source>Uses a third-party server to connect to the Hidering network. Less secure, but easier on your computer.</source>
+        <translation>Korzysta z zewnętrznego serwera do połączenia się z siecią Hidering. Mniej bezpieczne, ale mniej obciążające dla komputera.</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsNode.qml" line="253"/>
-        <source>To find a remote node, type &apos;Monero remote node&apos; into your favorite search engine. Please ensure the node is run by a trusted third-party.</source>
-        <translation>By znaleźć węzeł zewnętrzny, wpisz &apos;Monero remote node&apos; w swojej ulubionej wyszukiwarce. Upewnij się, że węzeł jest zarządzany przez zaufaną osobę.</translation>
+        <source>To find a remote node, type &apos;Hidering remote node&apos; into your favorite search engine. Please ensure the node is run by a trusted third-party.</source>
+        <translation>By znaleźć węzeł zewnętrzny, wpisz &apos;Hidering remote node&apos; w swojej ulubionej wyszukiwarce. Upewnij się, że węzeł jest zarządzany przez zaufaną osobę.</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsNode.qml" line="317"/>
@@ -2205,8 +2205,8 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsWallet.qml" line="177"/>
-        <source>Receive Monero for your business, easily.</source>
-        <translation>Przyjmuj Monero dla twojego biznesu, z łatwością.</translation>
+        <source>Receive Hidering for your business, easily.</source>
+        <translation>Przyjmuj Hidering dla twojego biznesu, z łatwością.</translation>
     </message>
     <message>
         <location filename="../pages/settings/SettingsWallet.qml" line="178"/>
@@ -2233,8 +2233,8 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="103"/>
-        <source>This page allows you to interact with the shared ring database. This database is meant for use by Monero wallets as well as wallets from Monero clones which reuse the Monero keys.</source>
-        <translation>Tutaj możesz operować na współdzielonej bazie danych pierścieni. Owa baza danych jest do użytku dla portfeli Monero oraz portfeli klonów Monero, które używają kluczy Monero.</translation>
+        <source>This page allows you to interact with the shared ring database. This database is meant for use by Hidering wallets as well as wallets from Hidering clones which reuse the Hidering keys.</source>
+        <translation>Tutaj możesz operować na współdzielonej bazie danych pierścieni. Owa baza danych jest do użytku dla portfeli Hidering oraz portfeli klonów Hidering, które używają kluczy Hidering.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="115"/>
@@ -2243,8 +2243,8 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="116"/>
-        <source>In order to obscure which inputs in a Monero transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection Monero uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the Monero project and is available on the getmonero.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing Monero clones) yourself using the monero-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
-        <translation>W celu ukrycia, które wejścia w transakcji Monero są wydawane, osoba postronna nie powinna być w stanie stwierdzić, które wejścia w pierścieniu już zostały wydane. Gdyby była w stanie to zrobić, osłabiłoby to ochronę zapewnioną przez podpisy pierścieniowe. Jeśli wiadomo, że wszystkie wejścia poza jednym zostały wydane, to staje się oczywiste, które wejście faktycznie jest wydawane, a to niweczy efekt podpisów pierścieniowych - jednych z trzech głównych warstw ochrony prywatności używanych przez Monero.&lt;br&gt;Aby pomóc transakcjom unikać tych wejść, lista już wydanych wejść może być użyta do pominięcia ich w nowych transakcjach. Takowa lista jest zarządzana przez projekt Monero i jest dostępna na stronie getmonero.org, skąd można ją tutaj pobrać.&lt;br&gt;Ewentualnie, możesz przeskanować blockchain (oraz blockchain klona Monero, który wykorzystuje ponownie klucze) samemu używając narzędzia monero-blockchain-mark-spent-outputs do utworzenia listy wydanych wyjść.&lt;br&gt;</translation>
+        <source>In order to obscure which inputs in a Hidering transaction are being spent, a third party should not be able to tell which inputs in a ring are already known to be spent. Being able to do so would weaken the protection afforded by ring signatures. If all but one of the inputs are known to be already spent, then the input being actually spent becomes apparent, thereby nullifying the effect of ring signatures, one of the three main layers of privacy protection Hidering uses.&lt;br&gt;To help transactions avoid those inputs, a list of known spent ones can be used to avoid using them in new transactions. Such a list is maintained by the Hidering project and is available on the hidering.org website, and you can import this list here.&lt;br&gt;Alternatively, you can scan the blockchain (and the blockchain of key-reusing Hidering clones) yourself using the hidering-blockchain-mark-spent-outputs tool to create a list of known spent outputs.&lt;br&gt;</source>
+        <translation>W celu ukrycia, które wejścia w transakcji Hidering są wydawane, osoba postronna nie powinna być w stanie stwierdzić, które wejścia w pierścieniu już zostały wydane. Gdyby była w stanie to zrobić, osłabiłoby to ochronę zapewnioną przez podpisy pierścieniowe. Jeśli wiadomo, że wszystkie wejścia poza jednym zostały wydane, to staje się oczywiste, które wejście faktycznie jest wydawane, a to niweczy efekt podpisów pierścieniowych - jednych z trzech głównych warstw ochrony prywatności używanych przez Hidering.&lt;br&gt;Aby pomóc transakcjom unikać tych wejść, lista już wydanych wejść może być użyta do pominięcia ich w nowych transakcjach. Takowa lista jest zarządzana przez projekt Hidering i jest dostępna na stronie hidering.org, skąd można ją tutaj pobrać.&lt;br&gt;Ewentualnie, możesz przeskanować blockchain (oraz blockchain klona Hidering, który wykorzystuje ponownie klucze) samemu używając narzędzia hidering-blockchain-mark-spent-outputs do utworzenia listy wydanych wyjść.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="134"/>
@@ -2313,13 +2313,13 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="247"/>
-        <source>In order to avoid nullifying the protection afforded by Monero&apos;s ring signatures, an output should not be spent with different rings on different blockchains. While this is normally not a concern, it can become one when a key-reusing Monero clone allows you to spend existing outputs. In this case, you need to ensure this existing outputs uses the same ring on both chains.&lt;br&gt;This will be done automatically by Monero and any key-reusing software which is not trying to actively strip you of your privacy.&lt;br&gt;If you are using a key-reusing Monero clone too, and this clone does not include this protection, you can still ensure your transactions are protected by spending on the clone first, then manually adding the ring on this page, which allows you to then spend your Monero safely.&lt;br&gt;If you do not use a key-reusing Monero clone without these safety features, then you do not need to do anything as it is all automated.&lt;br&gt;</source>
-        <translation>Aby uniknąć zniweczenia ochrony dostarczonej przez podpisy pierścieniowe, wyjście nie powinno być wydane z różnymi pierścieniami w różnych blockchainach. Nie jest to zazwyczaj problemem, ale może się nim stać kiedy wykorzystujący ponownie klucze klon Monero pozwoli ci wydać istniejące wyjścia. W takim przypadku musisz upewnić się, że te istniejące wyjścia używają tego samego pierścienia w obu blockchainach.&lt;br&gt;Będzie to zrobione automatycznie przez Monero oraz każde ponownie wykorzystujące klucze oprogramowanie, które nie próbuje odebrać ci prywatności.&lt;br&gt;Jeśli także używasz wykorzystującego ponownie klucze klona Monero i ów klon nie zapewnia tej ochrony, nadal możesz ochronić swoje transakcje poprzez wydanie środków najpierw na klonie, a potem ręczne dodanie pierścienia na tej stronie, co pozwala ci wydać twoje Monero bezpiecznie.&lt;br&gt;Jeśli nie używasz wykorzystującego ponownie klucze klona Monero, który nie zapewnia tych środków bezpieczeństwa, to nie musisz wykonywać żadnych dodatkowych działań, jako że wszystko jest zautomatyzowane.&lt;br&gt;</translation>
+        <source>In order to avoid nullifying the protection afforded by Hidering&apos;s ring signatures, an output should not be spent with different rings on different blockchains. While this is normally not a concern, it can become one when a key-reusing Hidering clone allows you to spend existing outputs. In this case, you need to ensure this existing outputs uses the same ring on both chains.&lt;br&gt;This will be done automatically by Hidering and any key-reusing software which is not trying to actively strip you of your privacy.&lt;br&gt;If you are using a key-reusing Hidering clone too, and this clone does not include this protection, you can still ensure your transactions are protected by spending on the clone first, then manually adding the ring on this page, which allows you to then spend your Hidering safely.&lt;br&gt;If you do not use a key-reusing Hidering clone without these safety features, then you do not need to do anything as it is all automated.&lt;br&gt;</source>
+        <translation>Aby uniknąć zniweczenia ochrony dostarczonej przez podpisy pierścieniowe, wyjście nie powinno być wydane z różnymi pierścieniami w różnych blockchainach. Nie jest to zazwyczaj problemem, ale może się nim stać kiedy wykorzystujący ponownie klucze klon Hidering pozwoli ci wydać istniejące wyjścia. W takim przypadku musisz upewnić się, że te istniejące wyjścia używają tego samego pierścienia w obu blockchainach.&lt;br&gt;Będzie to zrobione automatycznie przez Hidering oraz każde ponownie wykorzystujące klucze oprogramowanie, które nie próbuje odebrać ci prywatności.&lt;br&gt;Jeśli także używasz wykorzystującego ponownie klucze klona Hidering i ów klon nie zapewnia tej ochrony, nadal możesz ochronić swoje transakcje poprzez wydanie środków najpierw na klonie, a potem ręczne dodanie pierścienia na tej stronie, co pozwala ci wydać twoje Hidering bezpiecznie.&lt;br&gt;Jeśli nie używasz wykorzystującego ponownie klucze klona Hidering, który nie zapewnia tych środków bezpieczeństwa, to nie musisz wykonywać żadnych dodatkowych działań, jako że wszystko jest zautomatyzowane.&lt;br&gt;</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="266"/>
-        <source>This records rings used by outputs spent on Monero on a key reusing chain, so that the same ring may be reused to avoid privacy issues.</source>
-        <translation>Tutaj rejestrowany jest pierścień użyty przez wyjścia Monero wydane na wykorzystującym ponownie klucze blockchainie, by ten sam pierścień mógł zostać użyty w celu uniknięcia deanonimizacji.</translation>
+        <source>This records rings used by outputs spent on Hidering on a key reusing chain, so that the same ring may be reused to avoid privacy issues.</source>
+        <translation>Tutaj rejestrowany jest pierścień użyty przez wyjścia Hidering wydane na wykorzystującym ponownie klucze blockchainie, by ten sam pierścień mógł zostać użyty w celu uniknięcia deanonimizacji.</translation>
     </message>
     <message>
         <location filename="../pages/SharedRingDB.qml" line="277"/>
@@ -2503,8 +2503,8 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/Sign.qml" line="341"/>
-        <source>Enter the Monero Address (example: 44AFFq5kSiGBoZ...)</source>
-        <translation>Wpisz adres Monero (przykładowo: 44AFFq5kSiGBoZ...)</translation>
+        <source>Enter the Hidering Address (example: 44AFFq5kSiGBoZ...)</source>
+        <translation>Wpisz adres Hidering (przykładowo: 44AFFq5kSiGBoZ...)</translation>
     </message>
     <message>
         <location filename="../pages/Sign.qml" line="351"/>
@@ -2671,8 +2671,8 @@ Możesz zmienić hasło w ustawieniach portfela.</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="1071"/>
-        <source>Monero sent successfully</source>
-        <translation>Pomyślnie wysłano Monero</translation>
+        <source>Hidering sent successfully</source>
+        <translation>Pomyślnie wysłano Hidering</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="1172"/>
@@ -2759,8 +2759,8 @@ Uaktualnij go lub podłącz się do innego demona</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="169"/>
-        <source>Spendable funds: %1 XMR. Please wait ~%2 minutes for your whole balance to become spendable.</source>
-        <translation>Środki do wydania: %1 XMR. Poczekaj ok. %2 minut, aż całe saldo będzie dostępne do wydania.</translation>
+        <source>Spendable funds: %1 HRG. Please wait ~%2 minutes for your whole balance to become spendable.</source>
+        <translation>Środki do wydania: %1 HRG. Poczekaj ok. %2 minut, aż całe saldo będzie dostępne do wydania.</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="690"/>
@@ -2851,8 +2851,8 @@ Uaktualnij go lub podłącz się do innego demona</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="985"/>
-        <source>Spend XMR from a cold (offline) wallet</source>
-        <translation>Wyślij XMR z portfela offline</translation>
+        <source>Spend HRG from a cold (offline) wallet</source>
+        <translation>Wyślij HRG z portfela offline</translation>
     </message>
     <message>
         <location filename="../pages/Transfer.qml" line="983"/>
@@ -3111,8 +3111,8 @@ Confirmation message:
     </message>
     <message>
         <location filename="../components/TxConfirmationDialog.qml" line="311"/>
-        <source>Monero address</source>
-        <translation>Adres Monero</translation>
+        <source>Hidering address</source>
+        <translation>Adres Hidering</translation>
     </message>
     <message>
         <location filename="../components/TxConfirmationDialog.qml" line="332"/>
@@ -3197,7 +3197,7 @@ For reserve proofs you don&apos;t need to specify tx id or address.</source>
     </message>
     <message>
         <location filename="../pages/TxKey.qml" line="109"/>
-        <source>Paste amount of XMR (reserve proof only)</source>
+        <source>Paste amount of HRG (reserve proof only)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3264,13 +3264,13 @@ W przypadku &apos;Dowodu wydania&apos; nie musisz podawać adresu odbiorcy.</tra
     <name>UpdateDialog</name>
     <message>
         <location filename="../components/UpdateDialog.qml" line="77"/>
-        <source>New Monero version v%1 is available.</source>
-        <translation>Nowa wersja Monero v%1 jest dostępna.</translation>
+        <source>New Hidering version v%1 is available.</source>
+        <translation>Nowa wersja Hidering v%1 jest dostępna.</translation>
     </message>
     <message>
         <location filename="../components/UpdateDialog.qml" line="98"/>
-        <source>Please visit getmonero.org for details</source>
-        <translation>Proszę odwiedź getmonero.org aby dowiedzieć się szczegółów</translation>
+        <source>Please visit hidering.org for details</source>
+        <translation>Proszę odwiedź hidering.org aby dowiedzieć się szczegółów</translation>
     </message>
     <message>
         <location filename="../components/UpdateDialog.qml" line="102"/>
@@ -3650,8 +3650,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardCreateWallet3.qml" line="60"/>
-        <source>To be able to communicate with the Monero network your wallet needs to be connected to a Monero node. For best privacy it&apos;s recommended to run your own node.</source>
-        <translation>Do komunikacji z siecią Monero, twój portfel musi być połączony z węzłem Monero. Dla najwyższej prywatności rekomendowane jest uruchomienie własnego węzła.</translation>
+        <source>To be able to communicate with the Hidering network your wallet needs to be connected to a Hidering node. For best privacy it&apos;s recommended to run your own node.</source>
+        <translation>Do komunikacji z siecią Hidering, twój portfel musi być połączony z węzłem Hidering. Dla najwyższej prywatności rekomendowane jest uruchomienie własnego węzła.</translation>
     </message>
 </context>
 <context>
@@ -3711,8 +3711,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardDaemonSettings.qml" line="152"/>
-        <source>Additionally, you may specify a bootstrap node to use Monero immediately.</source>
-        <translation>Dodatkowo możesz ustawić węzeł do bootstrap aby korzystać z Monero natychmiast.</translation>
+        <source>Additionally, you may specify a bootstrap node to use Hidering immediately.</source>
+        <translation>Dodatkowo możesz ustawić węzeł do bootstrap aby korzystać z Hidering natychmiast.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardDaemonSettings.qml" line="192"/>
@@ -3724,8 +3724,8 @@ może być wymagany Twój wkład.</translation>
     <name>WizardHome</name>
     <message>
         <location filename="../wizard/WizardHome.qml" line="66"/>
-        <source>Welcome to Monero</source>
-        <translation>Witaj w Monero</translation>
+        <source>Welcome to Hidering</source>
+        <translation>Witaj w Hidering</translation>
     </message>
     <message>
         <location filename="../wizard/WizardHome.qml" line="78"/>
@@ -3746,8 +3746,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardHome.qml" line="82"/>
-        <source>Choose this option if this is your first time using Monero.</source>
-        <translation>Wybierz tą opcję jeżeli pierwszy raz korzystasz z Monero.</translation>
+        <source>Choose this option if this is your first time using Hidering.</source>
+        <translation>Wybierz tą opcję jeżeli pierwszy raz korzystasz z Hidering.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardHome.qml" line="104"/>
@@ -3756,8 +3756,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardHome.qml" line="108"/>
-        <source>Connect your hardware wallet to create a new Monero wallet.</source>
-        <translation>Podłącz twój portfel sprzętowy aby stworzyć nowy portfel Monero.</translation>
+        <source>Connect your hardware wallet to create a new Hidering wallet.</source>
+        <translation>Podłącz twój portfel sprzętowy aby stworzyć nowy portfel Hidering.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardHome.qml" line="127"/>
@@ -3822,8 +3822,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeBootstrap.qml" line="84"/>
-        <source>Temporary use of remote nodes is useful in order to use Monero immediately (hence the name bootstrap), however be aware that when using remote nodes (including with the bootstrap setting), nodes could track your IP address, track your &quot;restore height&quot; and associated block request data, and send you inaccurate information to learn more about transactions you make.</source>
-        <translation>Tymczasowe korzystanie ze zdalnych węzłów jest przydatne do natychmiastowego uruchomienia Monero (stąd nazwa bootstrap), jednak należy pamiętać, że podczas korzystania z węzłów zdalnych (w tym z ustawieniem ładowania początkowego), węzły mogą śledzić Twój adres IP, śledzić „wysokość przywracania” i powiązane dane z żądań bloków i wysyłać Tobie błędnych informacji, aby dowiedzieć się więcej o dokonywanych transakcjach.</translation>
+        <source>Temporary use of remote nodes is useful in order to use Hidering immediately (hence the name bootstrap), however be aware that when using remote nodes (including with the bootstrap setting), nodes could track your IP address, track your &quot;restore height&quot; and associated block request data, and send you inaccurate information to learn more about transactions you make.</source>
+        <translation>Tymczasowe korzystanie ze zdalnych węzłów jest przydatne do natychmiastowego uruchomienia Hidering (stąd nazwa bootstrap), jednak należy pamiętać, że podczas korzystania z węzłów zdalnych (w tym z ustawieniem ładowania początkowego), węzły mogą śledzić Twój adres IP, śledzić „wysokość przywracania” i powiązane dane z żądań bloków i wysyłać Tobie błędnych informacji, aby dowiedzieć się więcej o dokonywanych transakcjach.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeBootstrap.qml" line="97"/>
@@ -3845,8 +3845,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeRemoteNodeWarning.qml" line="72"/>
-        <source>This mode is ideal for managing small amounts of Monero. You have access to basic features for making and managing transactions. It will automatically connect to the Monero network so you can start using Monero immediately.</source>
-        <translation>Ten tryb jest idealny dla niskich kwot w Monero. Masz dostęp do podstawowych funkcji aby otrzymywać oraz wysyłać transakcje. Automatycznie połączy cie z siecią Monero i natychmiast będziesz w stanie korzystać z Monero.</translation>
+        <source>This mode is ideal for managing small amounts of Hidering. You have access to basic features for making and managing transactions. It will automatically connect to the Hidering network so you can start using Hidering immediately.</source>
+        <translation>Ten tryb jest idealny dla niskich kwot w Hidering. Masz dostęp do podstawowych funkcji aby otrzymywać oraz wysyłać transakcje. Automatycznie połączy cie z siecią Hidering i natychmiast będziesz w stanie korzystać z Hidering.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeRemoteNodeWarning.qml" line="85"/>
@@ -3936,8 +3936,8 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeSelection.qml" line="166"/>
-        <source>Create portable wallets and use them on any PC. Enable if you installed Monero on a USB stick, an external drive, or any other portable storage medium.</source>
-        <translation>Twórz przenośne portfele i używaj ich na każdym komputerze. Włącz, jeśli zainstalowałeś Monero na pamięci USB, dysku zewnętrznym lub innym przenośnym nośniku pamięci.</translation>
+        <source>Create portable wallets and use them on any PC. Enable if you installed Hidering on a USB stick, an external drive, or any other portable storage medium.</source>
+        <translation>Twórz przenośne portfele i używaj ich na każdym komputerze. Włącz, jeśli zainstalowałeś Hidering na pamięci USB, dysku zewnętrznym lub innym przenośnym nośniku pamięci.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardModeSelection.qml" line="175"/>
@@ -4108,10 +4108,10 @@ może być wymagany Twój wkład.</translation>
     </message>
     <message>
         <location filename="../wizard/WizardRestoreWallet3.qml" line="63"/>
-        <source>To be able to communicate with the Monero network your wallet needs to be connected to a Monero node. For best privacy it&apos;s recommended to run your own node.
+        <source>To be able to communicate with the Hidering network your wallet needs to be connected to a Hidering node. For best privacy it&apos;s recommended to run your own node.
 
 If you don&apos;t have the option to run your own node, there&apos;s an option to connect to a remote node.</source>
-        <translation>Do komunikacji z siecią Monero, twój portfel musi być połączony z węzłem Monero. Dla najwyższej prywatności rekomendowane jest uruchomienie własnego węzła.
+        <translation>Do komunikacji z siecią Hidering, twój portfel musi być połączony z węzłem Hidering. Dla najwyższej prywatności rekomendowane jest uruchomienie własnego węzła.
 
 Jeżeli nie masz opcji aby uruchomić własny węzeł, jest opcja połączenia do zdalnego węzła.</translation>
     </message>
@@ -4329,8 +4329,8 @@ Jeżeli nie masz opcji aby uruchomić własny węzeł, jest opcja połączenia d
     </message>
     <message>
         <location filename="../main.qml" line="1345"/>
-        <source>Would you like to register Monero GUI Desktop entry?</source>
-        <translation>Czy chcesz zarejestrować wpis Monero GUI Desktop?</translation>
+        <source>Would you like to register Hidering GUI Desktop entry?</source>
+        <translation>Czy chcesz zarejestrować wpis Hidering GUI Desktop?</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1347"/>
@@ -4491,8 +4491,8 @@ Jeżeli nie masz opcji aby uruchomić własny węzeł, jest opcja połączenia d
     </message>
     <message>
         <location filename="../main.qml" line="1055"/>
-        <source>This address received %1 monero, with %2 confirmation(s).</source>
-        <translation>Ten adres otrzymał %1 monero z %2 potwierdzeniem/ami.</translation>
+        <source>This address received %1 hidering, with %2 confirmation(s).</source>
+        <translation>Ten adres otrzymał %1 hidering z %2 potwierdzeniem/ami.</translation>
     </message>
     <message>
         <location filename="../main.qml" line="1742"/>
@@ -4501,8 +4501,8 @@ Jeżeli nie masz opcji aby uruchomić własny węzeł, jest opcja połączenia d
     </message>
     <message>
         <location filename="../main.qml" line="1052"/>
-        <source>This address received %1 monero, but the transaction is not yet mined</source>
-        <translation>Ten adres otrzymał %1 Monero, ale transakcja nie została jeszcze wykopana</translation>
+        <source>This address received %1 hidering, but the transaction is not yet mined</source>
+        <translation>Ten adres otrzymał %1 Hidering, ale transakcja nie została jeszcze wykopana</translation>
     </message>
     <message>
         <location filename="../main.qml" line="836"/>

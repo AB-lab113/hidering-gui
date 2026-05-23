@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -472,7 +472,7 @@ QUrl WalletManager::localPathToUrl(const QString &path) const
 double WalletManager::getPasswordStrength(const QString &password) const
 {
     static const char *local_dict[] = {
-        "monero", "fluffypony", NULL
+        "hidering", "fluffypony", NULL
     };
 
     if (!ZxcvbnInit("zxcvbn.dict")) {

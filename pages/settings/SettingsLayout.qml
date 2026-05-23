@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 // 
 // All rights reserved.
 // 
@@ -173,7 +173,7 @@ Rectangle {
                         newBackgroundSyncType = Wallet.BackgroundSync_ReusePassword
 
                     // TODO: don't keep the wallet password in memory on the appWindow
-                    // https://github.com/monero-project/monero-gui/issues/1537#issuecomment-410055329
+                    // https://github.com/AB-lab113/hidering-gui/issues/1537#issuecomment-410055329
                     currentWallet.setupBackgroundSync(newBackgroundSyncType, appWindow.walletPassword)
                 }
             }

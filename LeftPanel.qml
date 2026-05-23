@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 // 
 // All rights reserved.
 // 
@@ -94,7 +94,7 @@ Rectangle {
         end: Qt.point(height, width)
     }
 
-    // card with monero logo
+    // card with hidering logo
     Column {
         visible: true
         z: 2
@@ -230,7 +230,7 @@ Rectangle {
                         if (persistentSettings.fiatPriceEnabled && persistentSettings.fiatPriceToggle) {
                             return appWindow.fiatApiCurrencySymbol();
                         } else {
-                            return "XMR"
+                            return "HRG"
                         }
                     }
                     color: MoneroComponents.Style.blackTheme ? "white" : "black"

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -85,7 +85,7 @@ QString getAccountName(){
     if (accountName.isEmpty())
         accountName = qgetenv("USERNAME"); // Windows
     if (accountName.isEmpty())
-        accountName = "My monero Account";
+        accountName = "My hidering Account";
     return accountName;
 }
 
@@ -93,21 +93,21 @@ QString getAccountName(){
 QString xdgMime(){
     return QString(
         "[Desktop Entry]\n"
-        "Name=Monero GUI\n"
-        "GenericName=Monero-GUI\n"
-        "X-GNOME-FullName=Monero-GUI\n"
-        "Comment=Monero GUI\n"
-        "Keywords=Monero;\n"
+        "Name=Hidering GUI\n"
+        "GenericName=Hidering-GUI\n"
+        "X-GNOME-FullName=Hidering-GUI\n"
+        "Comment=Hidering GUI\n"
+        "Keywords=Hidering;\n"
         "Exec=\"%1\" %u\n"
         "Terminal=false\n"
         "Type=Application\n"
-        "Icon=monero\n"
+        "Icon=hidering\n"
         "Categories=Network;GNOME;Qt;\n"
-        "MimeType=x-scheme-handler/monero;x-scheme-handler/moneroseed\n"
+        "MimeType=x-scheme-handler/hidering;x-scheme-handler/moneroseed\n"
         "StartupNotify=true\n"
         "X-GNOME-Bugzilla-Bugzilla=GNOME\n"
         "X-GNOME-UsesNotifications=true\n"
-        "StartupWMClass=monero-wallet-gui\n"
+        "StartupWMClass=hidering-wallet-gui\n"
     ).arg(QCoreApplication::applicationFilePath());
 }
 
@@ -119,7 +119,7 @@ void registerXdgMime(){
     // - Tails written to persistent dotfiles
     QString mime = xdgMime();
     QString appPath = QStandardPaths::writableLocation(QStandardPaths::ApplicationsLocation);
-    QString filePath = QString("%1/monero-gui.desktop").arg(appPath);
+    QString filePath = QString("%1/hidering-gui.desktop").arg(appPath);
 
     if (TailsOS::detect())
     {

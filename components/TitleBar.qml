@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 // 
 // All rights reserved.
 // 
@@ -259,13 +259,13 @@ Rectangle {
         Item {
             // make dummy space when hiding buttons when titlebar
             // state is 'essentials' in order for the
-            // monero logo to still be centered
+            // hidering logo to still be centered
             Layout.preferredWidth: parent.height * 2  // amount of buttons we hide
             Layout.preferredHeight: parent.height
             visible: root.state == "essentials"
         }
 
-        // monero logo
+        // hidering logo
         Item {
             visible: walletName.length === 0
             Layout.fillWidth: true

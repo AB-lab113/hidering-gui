@@ -4,7 +4,7 @@
 ** Contact: https://www.qt.io/licensing/
 **
 ****************************************************************************/
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -44,7 +44,7 @@
 
 /*!
     \qmlmodule moneroSettings 1.0
-    \title Monero Settings QML Component
+    \title Hidering Settings QML Component
     \ingroup qmlmodules
     \brief Provides persistent platform-independent application settings.
 
@@ -193,7 +193,7 @@ QString MoneroSettings::portableFilePath()
 
 QString MoneroSettings::portableFolderName()
 {
-    return "monero-storage";
+    return "hidering-storage";
 }
 
 std::unique_ptr<QSettings> MoneroSettings::portableSettings() const

@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2026, The Monero Project
+// Copyright (c) 2014-2026, The Hidering Project
 //
 // All rights reserved.
 //

@@ -86,7 +86,7 @@ QtObject {
     property string _b_defaultFontColor: "white"
     property string _b_dimmedFontColor: "#BBBBBB"
     property string _b_lightGreyFontColor: "#DFDFDF"
-    property string _b_errorColor: "#FA6800"
+    property string _b_errorColor: "#FF6C3C"
     property string _b_textSelectionColor: "#BBBBBB"
     property string _b_textSelectedColor: "white"
 
@@ -99,8 +99,8 @@ QtObject {
     property string _b_inputBorderColorInActive: Qt.rgba(255, 255, 255, 0.32)
     property string _b_inputBorderColorInvalid: Qt.rgba(255, 0, 0, 0.40)
 
-    property string _b_buttonBackgroundColor: "#FA6800"
-    property string _b_buttonBackgroundColorHover: "#E65E00"
+    property string _b_buttonBackgroundColor: "#FFD700"
+    property string _b_buttonBackgroundColorHover: "#E6C200"
     property string _b_buttonBackgroundColorDisabled: "#707070"
     property string _b_buttonBackgroundColorDisabledHover: "#808080"
     property string _b_buttonInlineBackgroundColor: "#707070"
@@ -125,7 +125,7 @@ QtObject {
     property string _b_wizardBackgroundGradientStart: "#1e1e1e"
     property string _b_middlePanelBackgroundGradientStart: "#232323"
     property string _b_middlePanelBackgroundGradientStop: "#101010"
-    property string _b_middlePanelBackgroundColor: "#181818"
+    property string _b_middlePanelBackgroundColor: "#000000"
     property string _b_menuButtonFallbackBackgroundColor: "#09FFFFFF"
     property string _b_menuButtonGradientStart: "#11FFFFFF"
     property string _b_menuButtonGradientStop: "#00000000"
@@ -148,7 +148,7 @@ QtObject {
     property string _w_defaultFontColor: "black"
     property string _w_dimmedFontColor: "#3f3f3f"
     property string _w_lightGreyFontColor: "#515151"
-    property string _w_errorColor: "#FA6800"
+    property string _w_errorColor: "#FF6C3C"
     property string _w_textSelectionColor: "#BBBBBB"
     property string _w_textSelectedColor: "black"
 
@@ -161,8 +161,8 @@ QtObject {
     property string _w_inputBorderColorInActive: Qt.rgba(0, 0, 0, 0.16)
     property string _w_inputBorderColorInvalid: Qt.rgba(255, 0, 0, 0.50)
 
-    property string _w_buttonBackgroundColor: "#FA6800"
-    property string _w_buttonBackgroundColorHover: "#E65E00"
+    property string _w_buttonBackgroundColor: "#B8860B"
+    property string _w_buttonBackgroundColorHover: "#9E7300"
     property string _w_buttonBackgroundColorDisabled: "#bbbbbb"
     property string _w_buttonBackgroundColorDisabledHover: "#D1D1D1"
     property string _w_buttonInlineBackgroundColor: "#d9d9d9"
@@ -193,7 +193,7 @@ QtObject {
     property string _w_menuButtonGradientStop: "#10FFFFFF"
     property string _w_menuButtonTextColor: "#787878"
     property string _w_menuButtonImageRightSource: "qrc:///images/right.svg"
-    property string _w_menuButtonImageRightColorActive: "#FA6800"
+    property string _w_menuButtonImageRightColorActive: "#B8860B"
     property string _w_menuButtonImageRightColor: "#808080"
     property string _w_menuButtonImageDotArrowSource: "qrc:///images/arrow-right-medium-white.png"
     property string _w_inlineButtonTextColor: "#4d4d4d"

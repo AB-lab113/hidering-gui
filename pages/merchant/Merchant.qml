@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2026, The Monero Project
+// Copyright (c) 2014-2026, The Hidering Project
 //
 // All rights reserved.
 //
@@ -477,7 +477,7 @@ Item {
                         font.pixelSize: 14
                         font.bold: false
                         color: "white"
-                        text: qsTr("Amount to receive") + " (XMR)" + translationManager.emptyString
+                        text: qsTr("Amount to receive") + " (HRG)" + translationManager.emptyString
                         themeTransition: false
                     }
 
@@ -525,7 +525,7 @@ Item {
                     }
 
                     MoneroComponents.TextPlain {
-                        // @TODO: When we have XMR/USD rate avi. in the future.
+                        // @TODO: When we have HRG/USD rate avi. in the future.
                         visible: false
                         font.pixelSize: 14
                         font.bold: false

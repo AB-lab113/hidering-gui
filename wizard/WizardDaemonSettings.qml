@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 // 
 // All rights reserved.
 // 
@@ -149,7 +149,7 @@ ColumnLayout {
             }
 
             Text {
-                text: qsTr("Additionally, you may specify a bootstrap node to use Monero immediately.") + translationManager.emptyString
+                text: qsTr("Additionally, you may specify a bootstrap node to use Hidering immediately.") + translationManager.emptyString
                 Layout.topMargin: 4
                 Layout.fillWidth: true
 

@@ -10,6 +10,8 @@ add_library(openpgp
   ${SOURCES}
   ${HEADERS})
 
+target_compile_features(openpgp PUBLIC cxx_std_17)
+
 target_include_directories(openpgp
   PUBLIC
     ${CMAKE_SOURCE_DIR}/monero/contrib/epee/include

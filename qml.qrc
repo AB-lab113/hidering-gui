@@ -35,7 +35,7 @@
         <file>components/TipItem.qml</file>
         <file>images/tip.png</file>
         <file>components/MenuButtonDivider.qml</file>
-        <file>images/monero-vector.svg</file>
+        <file>images/hidering-vector.svg</file>
         <file>components/StandardDropdown.qml</file>
         <file>images/whiteDropIndicator.png</file>
         <file>images/whiteDropIndicator@2x.png</file>

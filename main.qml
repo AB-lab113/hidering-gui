@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -55,7 +55,7 @@ import "version.js" as Version
 
 ApplicationWindow {
     id: appWindow
-    title: "Monero" +
+    title: "Hidering" +
         (persistentSettings.displayWalletNameInTitleBar && walletName
         ? " - " + walletName
         : "")
@@ -111,12 +111,12 @@ ApplicationWindow {
                 "xmreur": "https://api.kraken.com/0/public/Ticker?pair=XMREUR"
             },
             "coingecko": {
-                "xmrusd": "https://api.coingecko.com/api/v3/simple/price?ids=monero&vs_currencies=usd",
-                "xmreur": "https://api.coingecko.com/api/v3/simple/price?ids=monero&vs_currencies=eur"
+                "xmrusd": "https://api.coingecko.com/api/v3/simple/price?ids=hidering&vs_currencies=usd",
+                "xmreur": "https://api.coingecko.com/api/v3/simple/price?ids=hidering&vs_currencies=eur"
             },
             "cryptocompare": {
-                "xmrusd": "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=USD",
-                "xmreur": "https://min-api.cryptocompare.com/data/price?fsym=XMR&tsyms=EUR",
+                "xmrusd": "https://min-api.cryptocompare.com/data/price?fsym=HRG&tsyms=USD",
+                "xmreur": "https://min-api.cryptocompare.com/data/price?fsym=HRG&tsyms=EUR",
             }
         }
     }
@@ -439,18 +439,18 @@ ApplicationWindow {
         leftPanel.balanceString = balance
         leftPanel.balanceUnlockedString = balanceU
         if (middlePanel.state === "Account") {
-            middlePanel.accountView.balanceAllText = walletManager.displayAmount(appWindow.currentWallet.balanceAll()) + " XMR";
-            middlePanel.accountView.unlockedBalanceAllText = walletManager.displayAmount(appWindow.currentWallet.unlockedBalanceAll()) + " XMR";
+            middlePanel.accountView.balanceAllText = walletManager.displayAmount(appWindow.currentWallet.balanceAll()) + " HRG";
+            middlePanel.accountView.unlockedBalanceAllText = walletManager.displayAmount(appWindow.currentWallet.unlockedBalanceAll()) + " HRG";
         }
     }
 
     function onUriHandler(uri){
-        if (uri && (uri.startsWith("monero://") || uri.startsWith("monero:"))) {
-            const normalizedUri = uri.replace("monero://", "monero:");
+        if (uri && (uri.startsWith("hidering://") || uri.startsWith("hidering:"))) {
+            const normalizedUri = uri.replace("hidering://", "hidering:");
             const parsed = walletManager.parse_uri_to_object(normalizedUri);
 
             if (parsed.error) {
-                console.log("Invalid Monero URI: " + parsed.error);
+                console.log("Invalid Hidering URI: " + parsed.error);
             } else {
                 middlePanel.transferView.sendTo(
                     parsed.address || "",
@@ -828,7 +828,7 @@ ApplicationWindow {
         // resume refresh
         currentWallet.startRefresh();
         informationPopup.title = qsTr("Daemon failed to start") + translationManager.emptyString;
-        informationPopup.text  = error + ".\n\n" + qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "monerod.exe" : "monerod")
+        informationPopup.text  = error + ".\n\n" + qsTr("Please check your wallet and daemon log for errors. You can also try to start %1 manually.").arg((isWindows)? "hideringd.exe" : "hideringd")
         if (middlePanel.advancedView.miningView.stopMiningEnabled == true) {
             walletManager.stopMining()
             p2poolManager.exit()
@@ -877,7 +877,7 @@ ApplicationWindow {
 
     function onWalletMoneySent(txId, amount) {
         // refresh transaction history here
-        console.log("monero sent found")
+        console.log("hidering sent found")
         currentWallet.history.refresh(currentWallet.currentSubaddressAccount); // this will refresh model
 
         if(middlePanel.state == "History")
@@ -1137,10 +1137,10 @@ ApplicationWindow {
                 informationPopup.icon = StandardIcon.Critical;
             } else if (received > 0) {
                 if (in_pool) {
-                    informationPopup.text = qsTr("This address received %1 monero, but the transaction is not yet mined").arg(walletManager.displayAmount(received));
+                    informationPopup.text = qsTr("This address received %1 hidering, but the transaction is not yet mined").arg(walletManager.displayAmount(received));
                 }
                 else {
-                    informationPopup.text = qsTr("This address received %1 monero, with %2 confirmation(s).").arg(walletManager.displayAmount(received)).arg(confirmations);
+                    informationPopup.text = qsTr("This address received %1 hidering, with %2 confirmation(s).").arg(walletManager.displayAmount(received)).arg(confirmations);
                 }
             }
             else {
@@ -1245,11 +1245,11 @@ ApplicationWindow {
             return ticker;
         } else if(url.startsWith("https://api.coingecko.com/api/v3/")){
             var key = currency === "xmreur" ? "eur" : "usd";
-            if(!resp.hasOwnProperty("monero") || !resp["monero"].hasOwnProperty(key)){
+            if(!resp.hasOwnProperty("hidering") || !resp["hidering"].hasOwnProperty(key)){
                 appWindow.fiatApiError("Coingecko API has error(s)");
                 return;
             }
-            return resp["monero"][key];
+            return resp["hidering"][key];
         } else if(url.startsWith("https://min-api.cryptocompare.com/data/")){
             var key = currency === "xmreur" ? "EUR" : "USD";
             if(!resp.hasOwnProperty(key)){
@@ -1431,7 +1431,7 @@ ApplicationWindow {
                 oshelper.createDesktopEntry();
             } else if (isLinux) {
                 confirmationDialog.title = qsTr("Desktop entry") + translationManager.emptyString;
-                confirmationDialog.text  = qsTr("Would you like to register Monero GUI Desktop entry?") + translationManager.emptyString;
+                confirmationDialog.text  = qsTr("Would you like to register Hidering GUI Desktop entry?") + translationManager.emptyString;
                 confirmationDialog.icon = StandardIcon.Question;
                 confirmationDialog.cancelText = qsTr("No") + translationManager.emptyString;
                 confirmationDialog.okText = qsTr("Yes") + translationManager.emptyString;
@@ -1450,7 +1450,7 @@ ApplicationWindow {
         id: persistentSettings
         fileName: {
             if(isTails && tailsUsePersistence)
-                return homePath + "/Persistent/Monero/monero-core.conf";
+                return homePath + "/Persistent/Hidering/hidering-core.conf";
             return "";
         }
 
@@ -2274,7 +2274,7 @@ ApplicationWindow {
     function checkUpdates() {
         const version = Version.GUI_VERSION.match(/\d+\.\d+\.\d+\.\d+/);
         if (version) {
-            walletManager.checkUpdatesAsync("monero-gui", "gui", getBuildTag(), version[0]);
+            walletManager.checkUpdatesAsync("hidering-gui", "gui", getBuildTag(), version[0]);
         } else {
             console.error("failed to parse version number", Version.GUI_VERSION);
         }
@@ -2361,11 +2361,11 @@ ApplicationWindow {
     function getDefaultDaemonRpcPort(networkType) {
         switch (parseInt(networkType)) {
             case NetworkType.STAGENET:
-                return 38081;
+                return 39741;
             case NetworkType.TESTNET:
-                return 28081;
+                return 29741;
             default:
-                return 18081;
+                return 19741;
         }
     }
 

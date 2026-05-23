@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -329,7 +329,7 @@ Rectangle {
                 MoneroComponents.Label {
                     Layout.bottomMargin: 3
                     fontSize: 14
-                    text: "XMR"
+                    text: "HRG"
                 }
 
                 MoneroComponents.Label {

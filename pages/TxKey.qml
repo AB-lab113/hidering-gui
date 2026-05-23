@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -106,7 +106,7 @@ Rectangle {
                 labelText: qsTr("Amount") + translationManager.emptyString
                 fontSize: 16
                 placeholderFontSize: 16
-                placeholderText: qsTr("Paste amount of XMR (reserve proof only)") + translationManager.emptyString
+                placeholderText: qsTr("Paste amount of HRG (reserve proof only)") + translationManager.emptyString
                 readOnly: false
                 copyButton: true
                 enabled: getProofAddressLine.text.length === 0 && getProofTxIdLine.text.length === 0

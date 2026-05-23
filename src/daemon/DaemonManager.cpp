@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -56,7 +56,7 @@ bool DaemonManager::start(const QString &flags, NetworkType::Type nettype, const
         return false;
     }
 
-    // prepare command line arguments and pass to monerod
+    // prepare command line arguments and pass to hideringd
     QStringList arguments;
 
     // Start daemon with --detach flag on non-windows platforms
@@ -106,7 +106,7 @@ bool DaemonManager::start(const QString &flags, NetworkType::Type nettype, const
         arguments << "--max-concurrency" << QString::number(concurrency);
     }
 
-    qDebug() << "starting monerod " + m_monerod;
+    qDebug() << "starting hideringd " + m_monerod;
     qDebug() << "With command line arguments " << arguments;
 
     QMutexLocker locker(&m_daemonMutex);
@@ -117,7 +117,7 @@ bool DaemonManager::start(const QString &flags, NetworkType::Type nettype, const
     connect(m_daemon.get(), SIGNAL(readyReadStandardOutput()), this, SLOT(printOutput()));
     connect(m_daemon.get(), SIGNAL(readyReadStandardError()), this, SLOT(printError()));
 
-    // Start monerod
+    // Start hideringd
     bool started = m_daemon->startDetached(m_monerod, arguments);
 
     // add state changed listener
@@ -187,9 +187,9 @@ bool DaemonManager::stopWatcher(NetworkType::Type nettype, const QString &dataDi
             if(counter >= 5) {
                 qDebug() << "Killing it! ";
 #ifdef Q_OS_WIN
-                QProcess::execute("taskkill",  {"/F", "/IM", "monerod.exe"});
+                QProcess::execute("taskkill",  {"/F", "/IM", "hideringd.exe"});
 #else
-                QProcess::execute("pkill", {"monerod"});
+                QProcess::execute("pkill", {"hideringd"});
 #endif
             }
 
@@ -349,7 +349,7 @@ QString DaemonManager::getArgs(const QString &dataDir) {
     QStringList tempArgs;
     #ifdef Q_OS_WIN
         //powershell
-        tempArgs << "Get-CimInstance Win32_Process -Filter \"name = 'monerod.exe'\" | select -ExpandProperty CommandLine ";
+        tempArgs << "Get-CimInstance Win32_Process -Filter \"name = 'hideringd.exe'\" | select -ExpandProperty CommandLine ";
         p.setProgram("powershell");
         p.setArguments(tempArgs);
         p.start();
@@ -358,7 +358,7 @@ QString DaemonManager::getArgs(const QString &dataDir) {
 
     #elif defined(Q_OS_UNIX)
         //pgrep
-        tempArgs << "monerod";
+        tempArgs << "hideringd";
         p.setProgram("pgrep");
         p.setArguments(tempArgs);
         p.start();
@@ -397,11 +397,11 @@ DaemonManager::DaemonManager(QObject *parent)
     , m_scheduler(this)
 {
 
-    // Platform depetent path to monerod
+    // Platform depetent path to hideringd
 #ifdef Q_OS_WIN
-    m_monerod = QApplication::applicationDirPath() + "/monerod.exe";
+    m_monerod = QApplication::applicationDirPath() + "/hideringd.exe";
 #elif defined(Q_OS_UNIX)
-    m_monerod = QApplication::applicationDirPath() + "/monerod";
+    m_monerod = QApplication::applicationDirPath() + "/hideringd";
 #endif
 
     if (m_monerod.length() == 0) {

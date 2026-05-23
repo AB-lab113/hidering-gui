@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2024, The Monero Project
+// Copyright (c) 2014-2024, The Hidering Project
 //
 // All rights reserved.
 //
@@ -160,7 +160,7 @@ QString TransactionHistory::writeCSV(quint32 accountIndex, QString out)
 {
     // construct filename
     qint64 now = QDateTime::currentDateTime().currentMSecsSinceEpoch();
-    QString fn = QString(QString("%1/monero-txs_%2.csv").arg(out, QString::number(now / 1000)));
+    QString fn = QString(QString("%1/hidering-txs_%2.csv").arg(out, QString::number(now / 1000)));
 
     // open file
     QFile data(fn);
