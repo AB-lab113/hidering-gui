@@ -1,10 +1,10 @@
 [Desktop Entry]
-Name=Monero GUI
-GenericName=Monero-GUI
-Comment=Monero GUI
-Exec=monero-wallet-gui
+Name=HIDERING Wallet
+GenericName=HIDERING Wallet
+Comment=HIDERING — secure, private, untraceable cryptocurrency wallet
+Exec=hidering-wallet-gui
 Type=Application
 Terminal=false
 Categories=Network;Qt;Finance;Office;
-Icon=org.getmonero.Monero
+Icon=hidering-wallet-gui
 StartupNotify=true

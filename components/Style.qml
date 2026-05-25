@@ -15,11 +15,11 @@ QtObject {
     property QtObject fontMonoRegular: FontLoader { id: _fontMonoRegular; source: "qrc:/fonts/RobotoMono-Regular.ttf"; }
 
     property string grey: "#404040"
-    property string orange: "#FF6C3C"
+    property string orange: "#FFD700"
     property string white: "#FFFFFF"
     property string green: "#2EB358"
     property string moneroGrey: "#4C4C4C"
-    property string warningColor: "orange"
+    property string warningColor: "#FFD700"
 
     property string defaultFontColor: blackTheme ? _b_defaultFontColor : _w_defaultFontColor
     property string dimmedFontColor: blackTheme ? _b_dimmedFontColor : _w_dimmedFontColor
@@ -86,7 +86,7 @@ QtObject {
     property string _b_defaultFontColor: "white"
     property string _b_dimmedFontColor: "#BBBBBB"
     property string _b_lightGreyFontColor: "#DFDFDF"
-    property string _b_errorColor: "#FF6C3C"
+    property string _b_errorColor: "#FF4444"
     property string _b_textSelectionColor: "#BBBBBB"
     property string _b_textSelectedColor: "white"
 
@@ -148,7 +148,7 @@ QtObject {
     property string _w_defaultFontColor: "black"
     property string _w_dimmedFontColor: "#3f3f3f"
     property string _w_lightGreyFontColor: "#515151"
-    property string _w_errorColor: "#FF6C3C"
+    property string _w_errorColor: "#FF4444"
     property string _w_textSelectionColor: "#BBBBBB"
     property string _w_textSelectedColor: "black"
 

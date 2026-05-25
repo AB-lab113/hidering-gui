@@ -159,7 +159,7 @@ Rectangle {
                     anchors.rightMargin: 8
                     font.pixelSize: 12
                     font.bold: true
-                    color: "#ff9323"
+                    color: "#FFD700"
                     themeTransition: false
                 }
             }

@@ -59,7 +59,7 @@ Rectangle {
         width: parent.width
         height: parent.height
         z: parent.z + 1
-        color: "#ff6600"
+        color: "#FFD700"
     }
 
     RowLayout {
@@ -85,7 +85,7 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.verticalCenter: parent.verticalCenter
 
-                source: "qrc:///images/moneroLogo_white.png"
+                source: "qrc:///images/titlebarLogo.png"
             }
         }
 
