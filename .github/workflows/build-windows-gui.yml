@@ -81,7 +81,10 @@ jobs:
 
       - name: configure
         run: |
-          WIN_SYS_LIBS="-lws2_32 -lcrypt32 -lbcrypt -lgdi32 -liphlpapi"
+          # ole32/shell32/uuid/shlwapi: the GUI's oshelper.cpp pulls in COM +
+          # known-folder shell APIs (CoTaskMemFree, SHGetKnownFolderPath) that
+          # the daemon never needed. Appended at the end of the link line.
+          WIN_SYS_LIBS="-lws2_32 -lcrypt32 -lbcrypt -lgdi32 -liphlpapi -lole32 -lshell32 -luuid -lshlwapi"
           cmake -S . -B build -G "MSYS Makefiles" \
             -DCMAKE_BUILD_TYPE=Release \
             -DMANUAL_SUBMODULES=ON \
