@@ -1,0 +1,120 @@
+name: build-macos-gui
+
+# Builds the HIDERING Wallet GUI (Qt5) for macOS Apple Silicon (macos-14, arm64).
+# Intel (macos-13) is intentionally omitted: that runner is never scheduled on
+# this account (same observation as the backend daemon CI), and the published
+# Linux AppImage already covers the non-Apple-Silicon path.
+#
+# liboqs (Phase 5 PQC): the backend monero submodule's src/crypto/pqc.cpp
+# #include <oqs/oqs.h> unconditionally and is compiled into cncrypto, which the
+# wallet API (and therefore the GUI) links. The `EXISTS` guard in
+# monero/external/CMakeLists.txt only makes *linking* optional, not compiling —
+# so liboqs must be built BEFORE configuring the GUI or the build fails.
+#
+# Qt5 comes from Homebrew's keg-only qt@5; CMAKE_PREFIX_PATH points cmake at it.
+# Packaging uses the in-tree `deploy` cmake target (macdeployqt + ad-hoc codesign,
+# see cmake/Deploy.cmake) which produces a self-contained .app bundle.
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-macos-gui:
+    name: macOS arm64 GUI build
+    runs-on: macos-14
+    env:
+      ARCH: arm64
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: install dependencies
+        run: |
+          brew update
+          brew install --quiet qt@5 boost openssl libsodium miniupnpc expat \
+            libunwind-headers unbound zeromq hidapi
+
+      - name: compute job count
+        run: echo "JOBS=$(sysctl -n hw.logicalcpu)" >> "$GITHUB_ENV"
+
+      - name: build liboqs (Phase 5 PQC dependency)
+        run: |
+          OPENSSL_ROOT="$(brew --prefix openssl)"
+          cmake -S monero/external/liboqs -B monero/external/liboqs/build \
+            -DBUILD_SHARED_LIBS=OFF -DOQS_USE_OPENSSL=ON -DOQS_BUILD_ONLY_LIB=ON \
+            -DOPENSSL_ROOT_DIR="${OPENSSL_ROOT}" -DCMAKE_BUILD_TYPE=Release
+          cmake --build monero/external/liboqs/build -j"${JOBS}"
+
+      - name: configure
+        run: |
+          OPENSSL_ROOT="$(brew --prefix openssl)"
+          QT5_ROOT="$(brew --prefix qt@5)"
+          cmake -S . -B build \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DMANUAL_SUBMODULES=ON \
+            -DDEV_MODE=OFF \
+            -DWITH_SCANNER=OFF \
+            -DUSE_DEVICE_TREZOR=OFF \
+            -DBUILD_TESTS=OFF \
+            -DCMAKE_PREFIX_PATH="${QT5_ROOT}" \
+            -DOPENSSL_ROOT_DIR="${OPENSSL_ROOT}"
+
+      - name: build hidering-wallet-gui
+        run: cmake --build build --target hidering-wallet-gui -j"${JOBS}"
+
+      - name: deploy (macdeployqt + codesign)
+        run: cmake --build build --target deploy -j"${JOBS}"
+
+      - name: package
+        run: |
+          PKG="Hidering_Wallet-macos-arm64"
+          test -d build/bin/hidering-wallet-gui.app
+          mkdir -p dist
+          ( cd build/bin && tar -czf "${GITHUB_WORKSPACE}/dist/${PKG}.tar.gz" hidering-wallet-gui.app )
+          ( cd dist && shasum -a 256 "${PKG}.tar.gz" > "${PKG}.tar.gz.sha256" )
+          ls -lh dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Hidering_Wallet-macos-arm64
+          path: dist/Hidering_Wallet-macos-*
+
+  release:
+    name: Attach macOS GUI asset to release
+    needs: build-macos-gui
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # Shared with build-windows-gui's release job so they serialize and
+    # softprops create-or-updates the same release without a create race.
+    concurrency:
+      group: hidering-gui-release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Hidering_Wallet-macos-arm64
+          path: dist
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: HIDERING Wallet GUI ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: dist/Hidering_Wallet-macos-*

@@ -1,0 +1,161 @@
+name: build-windows-gui
+
+# Builds the HIDERING Wallet GUI (Qt5) for Windows x64 using the MSYS2 +
+# mingw-w64 toolchain (dynamic link).
+#
+# liboqs (Phase 5 PQC): the backend monero submodule's src/crypto/pqc.cpp
+# #include <oqs/oqs.h> unconditionally (compiled into cncrypto, linked by the
+# wallet API and thus the GUI), so liboqs must be built before configuring.
+#
+# Generator: `-G "MSYS Makefiles"` + GNU make under the mingw64 environment.
+# "MinGW Makefiles" breaks when sh.exe is on PATH (always true in the MSYS2 shell).
+#
+# Link: dynamic (STATIC=OFF). Linking libunbound statically pulls unresolved
+# nettle/gmp/hogweed symbols Monero's CMake doesn't add; the static OpenSSL 3
+# (libcrypto.a) also needs Win32 socket/cert-store libs appended at the END of
+# the link line via CMAKE_*_STANDARD_LIBRARIES.
+#
+# Packaging: windeployqt bundles Qt DLLs/plugins/QML next to the exe; the
+# remaining mingw64 runtime DLLs (boost, openssl, sodium, zmq, unbound, gcrypt,
+# icu, libstdc++...) are resolved RECURSIVELY via ldd. We deliberately do NOT use
+# cmake/Deploy.cmake's hardcoded DLL list here — it pins exact sonames (e.g.
+# libicudt78.dll) that break on any msys2 package bump; ldd resolution is robust.
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows-gui:
+    name: Windows x64 GUI build
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - uses: msys2/setup-msys2@v2
+        with:
+          update: true
+          install: >-
+            mingw-w64-x86_64-toolchain
+            make
+            mingw-w64-x86_64-cmake
+            mingw-w64-x86_64-boost
+            mingw-w64-x86_64-openssl
+            mingw-w64-x86_64-libsodium
+            mingw-w64-x86_64-miniupnpc
+            mingw-w64-x86_64-unbound
+            mingw-w64-x86_64-zeromq
+            mingw-w64-x86_64-hidapi
+            mingw-w64-x86_64-qt5
+            mingw-w64-x86_64-libgcrypt
+            mingw-w64-x86_64-angleproject
+            git
+            pkg-config
+            zip
+
+      - name: compute job count
+        run: echo "JOBS=$(nproc)" >> "$GITHUB_ENV"
+
+      - name: build liboqs (Phase 5 PQC dependency)
+        run: |
+          cmake -S monero/external/liboqs -B monero/external/liboqs/build -G "MSYS Makefiles" \
+            -DBUILD_SHARED_LIBS=OFF -DOQS_USE_OPENSSL=ON -DOQS_BUILD_ONLY_LIB=ON \
+            -DCMAKE_BUILD_TYPE=Release
+          cmake --build monero/external/liboqs/build -j"${JOBS}"
+
+      - name: configure
+        run: |
+          WIN_SYS_LIBS="-lws2_32 -lcrypt32 -lbcrypt -lgdi32 -liphlpapi"
+          cmake -S . -B build -G "MSYS Makefiles" \
+            -DCMAKE_BUILD_TYPE=Release \
+            -DMANUAL_SUBMODULES=ON \
+            -DDEV_MODE=OFF \
+            -DSTATIC=OFF \
+            -DWITH_SCANNER=OFF \
+            -DUSE_DEVICE_TREZOR=OFF \
+            -DBUILD_TESTS=OFF \
+            -DBoost_NO_BOOST_CMAKE=ON \
+            -DCMAKE_C_STANDARD_LIBRARIES="${WIN_SYS_LIBS}" \
+            -DCMAKE_CXX_STANDARD_LIBRARIES="${WIN_SYS_LIBS}"
+
+      - name: build hidering-wallet-gui
+        run: cmake --build build --target hidering-wallet-gui -j"${JOBS}"
+
+      - name: package
+        run: |
+          PKG="Hidering_Wallet-windows-x64"
+          mkdir -p "dist/${PKG}"
+          cp build/bin/hidering-wallet-gui.exe "dist/${PKG}/"
+          cd "dist/${PKG}"
+
+          # Bundle Qt runtime, plugins and QML imports next to the exe.
+          windeployqt-qt5 --release --no-translations --qmldir "${GITHUB_WORKSPACE}" hidering-wallet-gui.exe
+
+          # Recursively copy the remaining mingw64 runtime DLLs that the exe and
+          # its already-copied dependencies need. Resolving via ldd survives msys2
+          # package version bumps, unlike a hardcoded soname list.
+          changed=1
+          while [ "$changed" = 1 ]; do
+            changed=0
+            while IFS= read -r f; do
+              while IFS= read -r dep; do
+                if [ -n "$dep" ] && [ -f "/mingw64/bin/${dep}" ] && [ ! -f "./${dep}" ]; then
+                  cp "/mingw64/bin/${dep}" .
+                  changed=1
+                fi
+              done < <(ldd "$f" 2>/dev/null | awk '/\/mingw64\/bin\//{print $1}')
+            done < <(find . \( -name '*.exe' -o -name '*.dll' \))
+          done
+
+          cd "${GITHUB_WORKSPACE}/dist"
+          zip -r "${PKG}.zip" "${PKG}"
+          sha256sum "${PKG}.zip" > "${PKG}.zip.sha256"
+          ls -lh
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Hidering_Wallet-windows-x64
+          path: dist/Hidering_Wallet-windows-*
+
+  release:
+    name: Attach Windows GUI asset to release
+    needs: build-windows-gui
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # Shared with build-macos-gui's release job so they serialize and
+    # softprops create-or-updates the same release without a create race.
+    concurrency:
+      group: hidering-gui-release-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Hidering_Wallet-windows-x64
+          path: dist
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: HIDERING Wallet GUI ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          files: dist/Hidering_Wallet-windows-*
